@@ -101,10 +101,13 @@ body {
         display: block;
     }
 }
+
 header .settings #user-avatar {
-  border-radius: 100px;
-  /* vertical-align: middle; */
-}
+    border-radius: 100px;
+    vertical-align: middle;
+    max-width: 42px;
+    display: block;
+  }
 .settings {
     display: none;
     position: relative;
