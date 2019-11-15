@@ -33,13 +33,13 @@ function assignWindowUser(user) {
     
     userAvatar.src = user.picture.thumbnail
 
-    docCookies.setItem('current-user', `{
-        userEmail: ${userEmail},
-        userCountry: ${userCountry},
-        userName: ${userName},
-        userUsername: ${userUsername},
-        userPictures: ${userPictures}
-    }`)
+    docCookies.setItem('current-user', `[{
+        "userEmail": "${userEmail}",
+        "userCountry": "${userCountry}",
+        "userName": "${userName}",
+        "userUsername": "${userUsername}",
+        "userPicture": "${userPictures}"
+    }]`)
 
     document.getElementById("user-card").innerHTML=cardTemplate({
         userEmail,
@@ -50,16 +50,34 @@ function assignWindowUser(user) {
     })
 }
 
-function currentUser(data) {
-
-    console.log(data)
-
-    if (!docCookies.getItem("current-user")) {
-        assignWindowUser(data)
-    }
-
-    console.log(window)
+const assignWindowUserFromCookie = () => {
+  const user = JSON.parse(docCookies.getItem("current-user"))[0];
+  console.log(user)
+  const userEmail = user.email;
+  const userName = user.userName;
+  const userCountry = user.userCountry;
+  const userUsername = user.userUsername;
+  const userPicture = user.userPicture;
+  const userAvatar = document.getElementById("user-avatar");
+  userAvatar.src = userPicture;
+  document.getElementById("user-card").innerHTML = cardTemplate({
+    userEmail,
+    userCountry,
+    userName,
+    userUsername,
+    userPicture
+  });
 }
+
+const currentUser = data => {
+  if (!docCookies.getItem('current-user')) {
+    assignWindowUser(data);
+  } else {
+    assignWindowUserFromCookie(data);
+  }
+  
+  console.log(data, window);
+};
 
 function init() {
     fetch(userApiUrl) // Call the fetch function passing the url of the API as a parameter
