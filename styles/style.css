@@ -101,6 +101,10 @@ body {
         display: block;
     }
 }
+header .settings #user-avatar {
+  border-radius: 100px;
+  /* vertical-align: middle; */
+}
 .settings {
     display: none;
     position: relative;
@@ -110,6 +114,7 @@ body {
 }
 .settings ul li {
     list-style: none;
+    align-self: center;
 }
 
 @media (min-width :960px) {
