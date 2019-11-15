@@ -1,0 +1,116 @@
+/* Color Theme Swatches in Hex */
+.Happy-Halloween-1-hex { color: #330136; }
+.Happy-Halloween-2-hex { color: #5E1742; }
+.Happy-Halloween-3-hex { color: #962E40; }
+.Happy-Halloween-4-hex { color: #C9463D; }
+.Happy-Halloween-5-hex { color: #FF5E35; }
+
+/* Color Theme Swatches in RGBA */
+.Happy-Halloween-1-rgba { color: rgba(51, 1, 54, 1); }
+.Happy-Halloween-2-rgba { color: rgba(93, 23, 66, 1); }
+.Happy-Halloween-3-rgba { color: rgba(149, 45, 63, 1); }
+.Happy-Halloween-4-rgba { color: rgba(200, 70, 61, 1); }
+.Happy-Halloween-5-rgba { color: rgba(255, 93, 52, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Happy-Halloween-1-hsla { color: hsla(296, 96, 10, 1); }
+.Happy-Halloween-2-hsla { color: hsla(323, 60, 22, 1); }
+.Happy-Halloween-3-hsla { color: hsla(349, 53, 38, 1); }
+.Happy-Halloween-4-hsla { color: hsla(3, 56, 51, 1); }
+.Happy-Halloween-5-hsla { color: hsla(12, 100, 60, 1); }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 64px;
+    background-color: #962E40;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width : 1440px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 24px solid #C9463D;
+    border-radius: 96px;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 86%;
+    margin: 24px auto;
+    /* margin: 0 20rem; */
+    align-items: center;
+}
+.header a {
+    text-decoration: none;
+    /* color: #5E1742; */
+    color: #C9463D;
+}
+.header a:hover {
+    color: #5E1742;
+    /* color: #330136; */
+}
+
+.nav {
+
+}
+.nav ul {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+
+    padding-left: 0;
+    justify-items: center;
+}
+.nav ul li {
+    list-style: none;
+}
+
+.settings ul {
+    display: grid;
+
+    grid-template-columns: 1fr minmax(auto, 20%);
+    grid-gap: 12px;
+
+    padding-left: 0;
+    justify-items: end;
+}
+.settings ul li {
+    list-style: none;
+}
+
+.hero {
+    height: 560px;
+    max-width: 94%;
+    margin: 0 auto;
+    background-image: linear-gradient(45deg, #FEBA8C 0%, #EE604F 100%);
+    border-radius: 64px;
+}
+.content {
+    max-width: 86%;
+    margin: 0 auto;
+}
+.content__top {
+    display: grid;
+
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+}
+.products img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* .product {
+    max-width: 240px;
+} */
