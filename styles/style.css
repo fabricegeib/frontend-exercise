@@ -128,12 +128,48 @@ body {
 }
 
 #user-card {
-    /* display: none; */
+  position: absolute;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 300px;
+  overflow: hidden;
+  display: none;
 }
 
-#user-avatar:hover #user-card {
-    /* display: block;
-    position: absolute; */
+#user-card.display {
+  display: block
+}
+#user-card:hover {
+  display: block !important;
+}
+
+#user-card header {
+  width: 100%;
+  padding: 0;
+  height: 200px;
+}
+#user-card header img {
+  object-fit: cover;
+  object-position:  center;
+  width: 100%;
+  height: 100%;
+}
+
+#user-card h4 {
+  text-transform: uppercase;
+}
+#user-card .content {
+  padding: 16px;
+  height: auto;
+}
+
+#user-card .content footer {
+  padding: 8px;
+  text-align: center;
+  color: #ccc
 }
 
 .hero {
@@ -143,13 +179,12 @@ body {
     background-image: linear-gradient(45deg, #FEBA8C 0%, #EE604F 100%);
     border-radius: 48px;
 }
-.content {
+.contentProducts {
     max-width: 86%;
     margin: 0 auto;
 }
-.content__top {
+.contentProducts__top {
     display: grid;
-
 }
 .products {
     display: grid;

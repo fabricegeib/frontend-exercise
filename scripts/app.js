@@ -3,14 +3,17 @@ let userLoaded = false;
 
 function cardTemplate(informations) {
     return `
-        <header>
-            <img src="${informations.userPictures.medium}" />
-        </header>
-        <div>
-            <span>${informations.userName}</span> - <span>${informations.userUsername}</span>
-            <span>${informations.userEmail}</span>
-            <small>${informations.userCountry}</small>
-        </div>
+    <header>
+        <img src="${informations.userPictures.large}" />
+    </header>
+    <div class="content">
+        <h4><span>${informations.userName}</span></h4>
+        <h5><span>@${informations.userUsername}</span></h5>
+        <div><span>${informations.userEmail}</span></div>
+        <footer>
+        <small>${informations.userCountry}</small>
+        </footer>
+    </div>
     `
 }
 
@@ -60,6 +63,10 @@ function init() {
         // This is where you run code if the server returns any errors
         console.log(error)
     });
+
+    document.querySelector("#user-avatar").addEventListener("click", function(){
+        document.querySelector("#user-card").classList.toggle("display")
+    })
 }
 
 window.addEventListener("load", init)
