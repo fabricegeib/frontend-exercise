@@ -38,14 +38,38 @@ body {
     border: 24px solid #C9463D;
     border-radius: 96px;
 }
+@media (min-width :960px) {
+
+}
+#toggle-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-size: 42px;
+  }
+  
+  @media (min-width: 960px) {
+    #toggle-menu {
+      display: none;
+    }
+  }
 
 .header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 86%;
-    margin: 24px auto;
-    /* margin: 0 20rem; */
+    position: relative;
     align-items: center;
+    margin: 24px auto;
+    width: 86%;
+}
+@media (min-width :960px) {
+    .header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* margin: 0 20rem; */
+    }
 }
 .header a {
     text-decoration: none;
@@ -58,7 +82,7 @@ body {
 }
 
 .nav {
-
+    display: none;
 }
 .nav ul {
     display: grid;
@@ -72,20 +96,34 @@ body {
 .nav ul li {
     list-style: none;
 }
-
+@media (min-width: 960px) {
+    .nav {
+        display: block;
+    }
+}
+.settings {
+    display: none;
+}
 .settings ul {
-    display: grid;
-
-    grid-template-columns: 1fr minmax(auto, 20%);
-    grid-gap: 12px;
-
-    padding-left: 0;
-    justify-items: end;
+    
 }
 .settings ul li {
     list-style: none;
 }
+@media (min-width :960px) {
+    .settings {
+        display: block;
+    }
+    .settings ul {
+        display: grid;
 
+        grid-template-columns: 1fr minmax(auto, 20%);
+        grid-gap: 12px;
+
+        padding-left: 0;
+        justify-items: end;
+    }
+}
 .hero {
     height: 560px;
     max-width: 94%;
