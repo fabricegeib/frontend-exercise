@@ -103,6 +103,7 @@ body {
 }
 .settings {
     display: none;
+    position: relative;
 }
 .settings ul {
     
@@ -110,6 +111,7 @@ body {
 .settings ul li {
     list-style: none;
 }
+
 @media (min-width :960px) {
     .settings {
         display: block;
@@ -124,12 +126,22 @@ body {
         justify-items: end;
     }
 }
+
+#user-card {
+    /* display: none; */
+}
+
+#user-avatar:hover #user-card {
+    /* display: block;
+    position: absolute; */
+}
+
 .hero {
     height: 560px;
     max-width: 94%;
     margin: 0 auto;
     background-image: linear-gradient(45deg, #FEBA8C 0%, #EE604F 100%);
-    border-radius: 64px;
+    border-radius: 48px;
 }
 .content {
     max-width: 86%;

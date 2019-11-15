@@ -1,4 +1,37 @@
 const userApiUrl = "https://randomuser.me/api/?results=10"
+let userLoaded = false;
+
+function cardTemplate(informations) {
+    return `
+        <header>
+            <img src="${informations.userPictures.medium}" />
+        </header>
+        <div>
+            <span>${informations.userName}</span> - <span>${informations.userUsername}</span>
+            <span>${informations.userEmail}</span>
+            <small>${informations.userCountry}</small>
+        </div>
+    `
+}
+
+
+
+function assignWindowUser(user) {
+    const userEmail = user.email;
+    const userName = `${user.name.first} ${user.name.last}`;
+    const userCountry = user.location.country;
+    const userUsername = user.login.username;
+    const userPictures = user.picture;
+    userLoaded = true;
+
+    document.getElementById("user-card").innerHTML=cardTemplate({
+        userEmail,
+        userName,
+        userCountry,
+        userUsername,
+        userPictures
+    })
+}
 
 function currentUser(data) {
     const userAvatar = document.getElementById("user-avatar")
@@ -7,6 +40,10 @@ function currentUser(data) {
     userAvatar.src = avatarUrl
 
     console.log(data)
+
+    assignWindowUser(data)
+
+    console.log(window)
 }
 
 function init() {
