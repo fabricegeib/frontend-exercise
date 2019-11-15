@@ -3,18 +3,19 @@ let userLoaded = false;
 
 function cardTemplate(informations) {
     return `
-    <header>
-        <img src="${informations.userPictures.large}" />
-    </header>
-    <div class="content">
-        <h4><span>${informations.userName}</span></h4>
-        <h5><span>@${informations.userUsername}</span></h5>
-        <div><span>${informations.userEmail}</span></div>
-        <footer>
-        <small>${informations.userCountry}</small>
-        </footer>
-    </div>
-    `
+        <header>
+            <img src="${informations.userPictures.large}" />
+        </header>
+        <div class="content">
+            <h4><span>${informations.userName}</span></h4>
+            <h5><span>@${informations.userUsername}</span></h5>
+            <div><span>${informations.userEmail}</span></div>
+            <footer>
+              <div><small>${informations.userCountry}</small></div>
+              <div><a href="#" class="button-danger" id="disconect">disconnect x</a></div>
+            </footer>
+        </div>
+    `;
 }
 
 
@@ -27,6 +28,19 @@ function assignWindowUser(user) {
     const userPictures = user.picture;
     userLoaded = true;
 
+    const userAvatar = document.getElementById("user-avatar")
+    const avatarUrl = data.picture.thumbnail
+    
+    userAvatar.src = user.picture.thumbnail
+
+    docCookies.setItem('current-user', `{
+        userEmail: ${userEmail},
+        userCountry: ${userCountry},
+        userName: ${userName},
+        userUsername: ${userUsername},
+        userPictures: ${userPictures}
+    }`)
+
     document.getElementById("user-card").innerHTML=cardTemplate({
         userEmail,
         userName,
@@ -37,14 +51,12 @@ function assignWindowUser(user) {
 }
 
 function currentUser(data) {
-    const userAvatar = document.getElementById("user-avatar")
-    const avatarUrl = data.picture.thumbnail
-    
-    userAvatar.src = avatarUrl
 
     console.log(data)
 
-    assignWindowUser(data)
+    if (!docCookies.getItem("current-user")) {
+        assignWindowUser(data)
+    }
 
     console.log(window)
 }
