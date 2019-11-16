@@ -18,7 +18,7 @@ _Shoes photos from [wethenew](https://wethenew.com/)_
 
 ## Steps
 
-⚠ (start local server on mac : python -m SimpleHTTPServer 8000 ⚠
+⚠ start local server on mac : python -m SimpleHTTPServer 8000 ⚠
 
 ### Chapter 1
 **Fork** the project, and setup a simple structured web project containing the following files and folders: 
