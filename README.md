@@ -14,6 +14,8 @@ Find the design attached here:
 
 _Props to [Anton Mikhaltsov](https://dribbble.com/mikhaltsov23) for the design._
 
+_Shoes photos from [wethenew](https://wethenew.com/)_
+
 ## Steps
 
 ### Chapter 1
